@@ -1,0 +1,31 @@
+# Document parsing
+pymupdf>=1.23.0
+
+# LLM & RAG framework
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langchain-pinecone>=0.1.0
+
+# Embeddings
+sentence-transformers>=2.7.0
+
+# Vector database
+pinecone>=4.0.0
+
+# API
+fastapi>=0.111.0
+uvicorn>=0.30.0
+
+# Environment & config
+python-dotenv>=1.0.0
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Frontend
+streamlit>=1.35.0
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
