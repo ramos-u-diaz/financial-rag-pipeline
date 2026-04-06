@@ -1,5 +1,6 @@
 import fitz  # PyMuPDF
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -62,8 +63,17 @@ def chunk_text(pages, chunk_size=800, overlap=80):
     return chunks
 
 
+def save_chunks(chunks, output_path):
+    """
+    Saves chunks to a JSON file so other scripts can pick them up.
+    JSON is just a standard text format for storing structured data.
+    """
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(chunks, f, indent=2, ensure_ascii=False)
+    
+    print(f"Saved {len(chunks)} chunks to {output_path}")
+
 if __name__ == "__main__":
-    # Run this script directly to test it
     pdf_path = "data/raw/Apple_10K_2025.pdf"
 
     print("Step 1: Extracting text from PDF...")
@@ -72,7 +82,10 @@ if __name__ == "__main__":
     print("\nStep 2: Chunking text...")
     chunks = chunk_text(pages)
 
-    # Preview the first chunk so we can see what we're working with
+    print("\nStep 3: Saving chunks...")
+    save_chunks(chunks, "data/processed/Apple_10K_2025_chunks.json")
+
+    # Preview the first chunk
     print("\n--- Preview of first chunk ---")
     print(f"Source: {chunks[0]['source']}")
     print(f"Page: {chunks[0]['page_number']}")
