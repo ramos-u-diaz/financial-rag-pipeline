@@ -1,0 +1,72 @@
+{
+  "score": 40.0,
+  "correct": 2,
+  "total": 5,
+  "results": [
+    {
+      "question": "What were Apple's total net sales in 2025?",
+      "expected": "416161",
+      "answer": "Apple's total net sales in 2025 were $416,161 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 26.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p26.0 (0.716)",
+        "Apple_10K_2025.pdf p32.0 (0.662)",
+        "Apple_10K_2025.pdf p39.0 (0.63)",
+        "Apple_10K_2025.pdf p24.0 (0.627)",
+        "Apple_10K_2025.pdf p51.0 (0.597)"
+      ]
+    },
+    {
+      "question": "How much did Apple spend on research and development in 2025?",
+      "expected": "34550",
+      "answer": "Apple spent $34,550 million on research and development in 2025. This information is found in the Apple 10-K document, Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p6.0 (0.565)",
+        "Apple_10K_2025.pdf p14.0 (0.565)",
+        "Apple_10K_2025.pdf p24.0 (0.56)",
+        "Apple_10K_2025.pdf p15.0 (0.518)",
+        "Apple_10K_2025.pdf p32.0 (0.514)"
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2025?",
+      "expected": "93736",
+      "answer": "Apple's net income in 2025 was $112,010 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 32.0.",
+      "passed": false,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.69)",
+        "Apple_10K_2025.pdf p36.0 (0.631)",
+        "Apple_10K_2025.pdf p26.0 (0.617)",
+        "Apple_10K_2025.pdf p35.0 (0.591)",
+        "Apple_10K_2025.pdf p33.0 (0.583)"
+      ]
+    },
+    {
+      "question": "How many full time employees does Apple have?",
+      "expected": "150000",
+      "answer": "I don't have enough information in the provided documents to answer that.",
+      "passed": false,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.58)",
+        "Apple_10K_2025.pdf p14.0 (0.567)",
+        "Apple_10K_2025.pdf p35.0 (0.547)",
+        "Apple_10K_2025.pdf p36.0 (0.532)",
+        "Apple_10K_2025.pdf p80.0 (0.529)"
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin in 2025?",
+      "expected": "46.9",
+      "answer": "Apple's gross margin in 2025 was $195,201 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 32.0.",
+      "passed": false,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.586)",
+        "Apple_10K_2025.pdf p80.0 (0.583)",
+        "Apple_10K_2025.pdf p35.0 (0.57)",
+        "Apple_10K_2025.pdf p26.0 (0.564)",
+        "Apple_10K_2025.pdf p24.0 (0.554)"
+      ]
+    }
+  ]
+}

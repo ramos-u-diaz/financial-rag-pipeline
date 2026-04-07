@@ -1,0 +1,72 @@
+{
+  "score": 100.0,
+  "correct": 5,
+  "total": 5,
+  "results": [
+    {
+      "question": "What were Apple's total net sales in 2025?",
+      "expected": "416,161",
+      "answer": "Apple's total net sales in 2025 were $416,161 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 26.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p26.0 (0.716)",
+        "Apple_10K_2025.pdf p32.0 (0.662)",
+        "Apple_10K_2025.pdf p39.0 (0.63)",
+        "Apple_10K_2025.pdf p24.0 (0.627)",
+        "Apple_10K_2025.pdf p51.0 (0.597)"
+      ]
+    },
+    {
+      "question": "How much did Apple spend on research and development in 2025?",
+      "expected": "34,550",
+      "answer": "Apple spent $34,550 million on research and development in 2025. This information is found in the Apple 10-K 2025 document, Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p6.0 (0.565)",
+        "Apple_10K_2025.pdf p14.0 (0.565)",
+        "Apple_10K_2025.pdf p24.0 (0.56)",
+        "Apple_10K_2025.pdf p15.0 (0.518)",
+        "Apple_10K_2025.pdf p32.0 (0.514)"
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2025?",
+      "expected": "112,010",
+      "answer": "Apple's net income in 2025 was $112,010 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.69)",
+        "Apple_10K_2025.pdf p36.0 (0.631)",
+        "Apple_10K_2025.pdf p26.0 (0.617)",
+        "Apple_10K_2025.pdf p35.0 (0.591)",
+        "Apple_10K_2025.pdf p33.0 (0.583)"
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin percentage in 2025?",
+      "expected": "46.9",
+      "answer": "Apple's gross margin percentage in 2025 was 46.9%. This information is found in Source 2: Apple_10K_2025.pdf, Page 27.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p80.0 (0.571)",
+        "Apple_10K_2025.pdf p27.0 (0.563)",
+        "Apple_10K_2025.pdf p35.0 (0.559)",
+        "Apple_10K_2025.pdf p32.0 (0.552)",
+        "Apple_10K_2025.pdf p26.0 (0.523)"
+      ]
+    },
+    {
+      "question": "What were Apple's total operating expenses in 2025?",
+      "expected": "62,151",
+      "answer": "Apple's total operating expenses in 2025 were $62,151 million. This information is found in Source 1: Apple_10K_2025.pdf, Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.698)",
+        "Apple_10K_2025.pdf p24.0 (0.649)",
+        "Apple_10K_2025.pdf p15.0 (0.648)",
+        "Apple_10K_2025.pdf p36.0 (0.642)",
+        "Apple_10K_2025.pdf p26.0 (0.612)"
+      ]
+    }
+  ]
+}

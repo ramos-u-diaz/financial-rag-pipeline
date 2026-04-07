@@ -1,0 +1,27 @@
+[
+    {
+        "question": "What were Apple's total net sales in 2025?",
+        "expected_answer": "416,161",
+        "notes": "Total net sales were $416,161 million for fiscal year 2025"
+    },
+    {
+        "question": "How much did Apple spend on research and development in 2025?",
+        "expected_answer": "34,550",
+        "notes": "R&D expenses were $34,550 million"
+    },
+    {
+        "question": "What was Apple's net income in 2025?",
+        "expected_answer": "112,010",
+        "notes": "Net income was $112,010 million"
+    },
+    {
+        "question": "What was Apple's gross margin percentage in 2025?",
+        "expected_answer": "46.9",
+        "notes": "Gross margin percentage was 46.9%"
+    },
+    {
+        "question": "What were Apple's total operating expenses in 2025?",
+        "expected_answer": "62,151",
+        "notes": "Total operating expenses were $62,151 million"
+    }
+]
