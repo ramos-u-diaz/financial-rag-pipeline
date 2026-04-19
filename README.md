@@ -29,12 +29,12 @@ Build a multi-document RAG (Retrieval-Augmented Generation) pipeline that lets u
 
 ### Progress
 - [x] Repository setup and structure
-- [ ] Document ingestion and chunking (Phase 1)
-- [ ] Embeddings and vector store (Phase 2)
-- [ ] RAG pipeline and evaluation (Phase 3)
-- [ ] FastAPI layer (Phase 4)
-- [ ] Docker and ECR (Phase 5)
-- [ ] AWS EC2 deployment (Phase 6)
+- [x] Document ingestion and chunking (Phase 1)
+- [x] Embeddings and vector store (Phase 2)
+- [x] RAG pipeline and evaluation (Phase 3)
+- [x] FastAPI layer (Phase 4)
+- [x] Docker and ECR (Phase 5)
+- [x] AWS EC2 deployment (Phase 6)
 - [ ] Streamlit frontend (Phase 7)
 - [ ] Amazon Bedrock swap (Phase 8)
 
