@@ -1,0 +1,72 @@
+{
+  "score": 100.0,
+  "correct": 5,
+  "total": 5,
+  "results": [
+    {
+      "question": "What were Apple's total net sales in 2025?",
+      "expected": "416,161",
+      "answer": "According to Apple's 2025 Form 10-K, Apple's total net sales in 2025 were **$416,161 million** (or approximately $416.2 billion).\n\nThis figure is cited from **Apple_10K_2025.pdf, Page 32.0** (Consolidated Statements of Operations) and is confirmed across multiple pages in the document. The total net sales consisted of:\n- Products: $307,003 million\n- Services: $109,158 million",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p26.0 (0.716)",
+        "Apple_10K_2025.pdf p32.0 (0.662)",
+        "Apple_10K_2025.pdf p39.0 (0.63)",
+        "Apple_10K_2025.pdf p24.0 (0.627)",
+        "Apple_10K_2025.pdf p51.0 (0.597)"
+      ]
+    },
+    {
+      "question": "How much did Apple spend on research and development in 2025?",
+      "expected": "34,550",
+      "answer": "According to Apple's Consolidated Statements of Operations in the 2025 Form 10-K, Apple spent **$34,550 million** (or approximately **$34.55 billion**) on research and development in fiscal year 2025.\n\n[Source: Apple_10K_2025.pdf, Page 32.0]",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p6.0 (0.565)",
+        "Apple_10K_2025.pdf p14.0 (0.565)",
+        "Apple_10K_2025.pdf p24.0 (0.56)",
+        "Apple_10K_2025.pdf p15.0 (0.518)",
+        "Apple_10K_2025.pdf p32.0 (0.514)"
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2025?",
+      "expected": "112,010",
+      "answer": "According to Apple's Consolidated Statements of Operations, **Apple's net income in 2025 was $112,010 million** (or approximately $112.01 billion).\n\n**Source:** Apple_10K_2025.pdf, Page 32.0",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.69)",
+        "Apple_10K_2025.pdf p36.0 (0.631)",
+        "Apple_10K_2025.pdf p26.0 (0.617)",
+        "Apple_10K_2025.pdf p35.0 (0.591)",
+        "Apple_10K_2025.pdf p33.0 (0.583)"
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin percentage in 2025?",
+      "expected": "46.9",
+      "answer": "According to Apple's 2025 Form 10-K, Apple's total gross margin percentage in 2025 was **46.9%**.\n\nThis breaks down as follows:\n- **Products gross margin percentage: 36.8%**\n- **Services gross margin percentage: 75.4%**\n\n[Source: Apple_10K_2025.pdf, Page 27.0]",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p80.0 (0.571)",
+        "Apple_10K_2025.pdf p27.0 (0.563)",
+        "Apple_10K_2025.pdf p35.0 (0.559)",
+        "Apple_10K_2025.pdf p32.0 (0.552)",
+        "Apple_10K_2025.pdf p26.0 (0.523)"
+      ]
+    },
+    {
+      "question": "What were Apple's total operating expenses in 2025?",
+      "expected": "62,151",
+      "answer": "According to the Consolidated Statements of Operations in Apple's 2025 Form 10-K, Apple's total operating expenses in 2025 were **$62,151 million**.\n\nThis consisted of:\n- Research and development: $34,550 million\n- Selling, general and administrative: $27,601 million\n\n[Source: Apple_10K_2025.pdf, Page 32.0]",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple_10K_2025.pdf p32.0 (0.698)",
+        "Apple_10K_2025.pdf p24.0 (0.649)",
+        "Apple_10K_2025.pdf p15.0 (0.648)",
+        "Apple_10K_2025.pdf p36.0 (0.642)",
+        "Apple_10K_2025.pdf p26.0 (0.612)"
+      ]
+    }
+  ]
+}
