@@ -6,39 +6,42 @@ from openai import OpenAI
 
 load_dotenv()
 
-# Initialize everything once when the module loads
-# This is important — loading the embedding model takes a few seconds
-# so we do it once, not every time a question is asked
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 openai_client = OpenAI()
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 index = pc.Index(os.getenv("PINECONE_INDEX_NAME"))
 
 
-def retrieve_relevant_chunks(query, top_k=5):
+def retrieve_relevant_chunks(query, top_k=5, company=None):
     """
     Takes a user question and finds the most relevant chunks in Pinecone.
-    
-    top_k=5 means we retrieve the 5 most similar chunks.
-    This is standard in RAG pipelines — retrieve a few, use the best ones.
+
+    company filter is optional — if provided, only chunks from that company
+    are searched. This is Pinecone metadata filtering, a core production
+    RAG pattern that prevents cross-document contamination.
+
+    Example: asking "what was net income?" filtered to Allstate won't
+    accidentally pull in Apple or Progressive numbers.
     """
-    # Convert the question to a vector using the same model we used for documents
     query_vector = embedding_model.encode(query).tolist()
 
-    # Ask Pinecone for the most similar chunks
+    # Build the filter only if a company is specified
+    pinecone_filter = {"company": {"$eq": company}} if company else None
+
     results = index.query(
         vector=query_vector,
         top_k=top_k,
-        include_metadata=True  # this gives us back the text and source info
+        include_metadata=True,
+        filter=pinecone_filter        # ← None means search everything
     )
 
-    # Extract the useful parts from Pinecone's response
     chunks = []
     for match in results.matches:
         chunks.append({
             "text": match.metadata["text"],
             "source": match.metadata["source"],
             "page_number": match.metadata["page_number"],
+            "company": match.metadata["company"],          # ← new
             "similarity_score": round(match.score, 3)
         })
 
@@ -46,14 +49,6 @@ def retrieve_relevant_chunks(query, top_k=5):
 
 
 def build_prompt(query, chunks):
-    """
-    Builds the prompt we send to GPT.
-    
-    This is the core of RAG — we're giving the LLM the retrieved context
-    and telling it to answer ONLY from that context.
-    This is what prevents hallucinations.
-    """
-    # Format the retrieved chunks into readable context
     context_pieces = []
     for i, chunk in enumerate(chunks):
         context_pieces.append(
@@ -61,11 +56,21 @@ def build_prompt(query, chunks):
         )
     context = "\n\n".join(context_pieces)
 
-    prompt = f"""You are a financial analyst assistant helping users understand complex financial documents.
+    prompt = f"""You are a financial analyst assistant helping users understand SEC 10-K annual filings.
+
+The documents in this system are 10-K filings from:
+- Apple (technology company) — reports "net sales" split into Products and Services segments
+- Allstate (insurance company) — uses insurance terminology like "combined ratio", "net premiums written", "loss ratio", and "underwriting income"
+- Progressive (insurance company) — also an insurer, uses similar terminology to Allstate
+
+Important: Insurance companies measure profitability differently than technology companies. 
+A "combined ratio" below 100% means the insurer is profitable on underwriting. 
+"Net premiums written" is the insurance equivalent of revenue.
 
 Answer the question based ONLY on the context provided below.
 If the answer is not in the context, say "I don't have enough information in the provided documents to answer that."
 Always cite which document and page number your answer comes from.
+Be concise and precise — this is a financial analysis tool, not a conversation.
 
 Context:
 {context}
@@ -77,19 +82,23 @@ Answer:"""
     return prompt
 
 
-def ask(query):
+def ask(query, company=None):
     """
     The main function — takes a question, returns an answer with citations.
-    This is what the FastAPI layer will call in Phase 4.
+    
+    company parameter is optional — pass "Allstate", "Progressive", or "Apple"
+    to restrict search to that company, or leave as None to search all documents.
     """
     print(f"\nQuestion: {query}")
+    if company:
+        print(f"Filtering to: {company}")
     print("Retrieving relevant chunks...")
 
     # Step 1 — retrieve
-    chunks = retrieve_relevant_chunks(query, top_k=5)
+    chunks = retrieve_relevant_chunks(query, top_k=5, company=company)
     print(f"Found {len(chunks)} relevant chunks")
     for chunk in chunks:
-        print(f"  - {chunk['source']} page {chunk['page_number']} (similarity: {chunk['similarity_score']})")
+        print(f"  - {chunk['company']} | {chunk['source']} page {chunk['page_number']} (similarity: {chunk['similarity_score']})")
 
     # Step 2 — build prompt
     prompt = build_prompt(query, chunks)
@@ -101,8 +110,7 @@ def ask(query):
         messages=[
             {"role": "user", "content": prompt}
         ],
-        temperature=0      # 0 = deterministic, no creativity
-                           # we want factual answers, not creative ones
+        temperature=0
     )
 
     answer = response.choices[0].message.content
@@ -111,9 +119,11 @@ def ask(query):
     return {
         "question": query,
         "answer": answer,
+        "company_filter": company,
         "sources": [
             {
                 "source": chunk["source"],
+                "company": chunk["company"],
                 "page_number": chunk["page_number"],
                 "similarity_score": chunk["similarity_score"]
             }
@@ -123,18 +133,29 @@ def ask(query):
 
 
 if __name__ == "__main__":
-    # Test questions against our Apple 10-K
-    test_questions = [
-        "What were Apple's total net sales in 2025?",
-        "What are the main risk factors Apple identified?",
-        "How much did Apple spend on research and development?"
-    ]
+    # Test 1 — no filter, searches all three companies
+    print("\n" + "="*60)
+    print("TEST 1: No filter — searching all documents")
+    result = ask("What were total net sales or revenue?")
+    print(f"\nANSWER:\n{result['answer']}")
+    print(f"\nSOURCES:")
+    for source in result['sources']:
+        print(f"  - {source['company']} | {source['source']}, page {source['page_number']} (score: {source['similarity_score']})")
 
-    for question in test_questions:
-        result = ask(question)
-        print("\n" + "="*60)
-        print(f"ANSWER:\n{result['answer']}")
-        print(f"\nSOURCES:")
-        for source in result['sources']:
-            print(f"  - {source['source']}, page {source['page_number']} (score: {source['similarity_score']})")
-        print("="*60)
+    # Test 2 — filtered to Allstate only
+    print("\n" + "="*60)
+    print("TEST 2: Filtered to Allstate only")
+    result = ask("What were the main risk factors?", company="Allstate")
+    print(f"\nANSWER:\n{result['answer']}")
+    print(f"\nSOURCES:")
+    for source in result['sources']:
+        print(f"  - {source['company']} | {source['source']}, page {source['page_number']} (score: {source['similarity_score']})")
+
+    # Test 3 — filtered to Progressive only
+    print("\n" + "="*60)
+    print("TEST 3: Filtered to Progressive only")
+    result = ask("What was net income?", company="Progressive")
+    print(f"\nANSWER:\n{result['answer']}")
+    print(f"\nSOURCES:")
+    for source in result['sources']:
+        print(f"  - {source['company']} | {source['source']}, page {source['page_number']} (score: {source['similarity_score']})")

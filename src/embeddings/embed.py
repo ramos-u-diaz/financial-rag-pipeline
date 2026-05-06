@@ -28,8 +28,8 @@ def setup_pinecone_index(pc, index_name):
         print(f"Creating new Pinecone index: {index_name}")
         pc.create_index(
             name=index_name,
-            dimension=384,      # must match our embedding model output size
-            metric="cosine",    # how we measure similarity between vectors
+            dimension=384,
+            metric="cosine",
             spec=ServerlessSpec(
                 cloud="aws",
                 region="us-east-1"
@@ -51,21 +51,15 @@ def generate_and_upload_embeddings(chunks, index):
     model = SentenceTransformer('all-MiniLM-L6-v2')
     print("Model loaded")
 
-    # Process in batches of 32
     batch_size = 32
     total_uploaded = 0
 
     for i in range(0, len(chunks), batch_size):
         batch = chunks[i:i + batch_size]
 
-        # Extract just the text from each chunk for embedding
         texts = [chunk['text'] for chunk in batch]
-
-        # Convert texts to vectors
         embeddings = model.encode(texts)
 
-        # Package everything up for Pinecone
-        # Each record needs: a unique ID, the vector, and metadata
         vectors = []
         for j, (chunk, embedding) in enumerate(zip(batch, embeddings)):
             vectors.append({
@@ -74,11 +68,13 @@ def generate_and_upload_embeddings(chunks, index):
                 "metadata": {
                     "text": chunk['text'],
                     "page_number": chunk['page_number'],
-                    "source": chunk['source']
+                    "source": chunk['source'],
+                    "company": chunk['company'],       # ← new
+                    "doc_type": chunk['doc_type'],     # ← new
+                    "year": chunk['year']              # ← new
                 }
             })
 
-        # Upload this batch to Pinecone
         index.upsert(vectors=vectors)
         total_uploaded += len(vectors)
         print(f"Uploaded {total_uploaded}/{len(chunks)} chunks...")
@@ -87,12 +83,11 @@ def generate_and_upload_embeddings(chunks, index):
 
 
 if __name__ == "__main__":
-    # Initialize Pinecone
     pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
     index_name = os.getenv("PINECONE_INDEX_NAME")
 
     print("Step 1: Loading chunks...")
-    chunks = load_chunks("data/processed/Apple_10K_2025_chunks.json")
+    chunks = load_chunks("data/processed/all_10K_chunks.json")  # ← updated
 
     print("\nStep 2: Setting up Pinecone index...")
     index = setup_pinecone_index(pc, index_name)

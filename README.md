@@ -51,6 +51,6 @@ required changing only the model client, with zero changes to retrieval logic or
 - [x] Docker and ECR (Phase 5)
 - [x] AWS EC2 deployment (Phase 6)
 - [x] Streamlit frontend (Phase 7)
-- [ ] Amazon Bedrock swap (Phase 8)
+- [x] Amazon Bedrock swap (Phase 8)
 
 Built by a Data Scientist with 6 years in insurance pricing pivoting to ML Engineering and MLOps.
