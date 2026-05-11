@@ -1,0 +1,147 @@
+{
+  "score": 90.0,
+  "correct": 9,
+  "total": 10,
+  "results": [
+    {
+      "question": "What were Apple's total net sales in 2025?",
+      "company_filter": "Apple",
+      "expected": "416,161",
+      "answer": "Apple's total net sales in 2025 were $416,161 million. (Source 2: Apple_10K_2025.pdf, Page 29)",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p26.0 (0.716)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.662)",
+        "Apple | Apple_10K_2025.pdf p39.0 (0.63)",
+        "Apple | Apple_10K_2025.pdf p24.0 (0.627)",
+        "Apple | Apple_10K_2025.pdf p51.0 (0.597)"
+      ]
+    },
+    {
+      "question": "How much did Apple spend on research and development in 2025?",
+      "company_filter": "Apple",
+      "expected": "34,550",
+      "answer": "Apple spent $34,550 million on research and development in 2025. This information is from the Apple 10-K filing, Page 29.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p6.0 (0.565)",
+        "Apple | Apple_10K_2025.pdf p14.0 (0.565)",
+        "Apple | Apple_10K_2025.pdf p24.0 (0.56)",
+        "Apple | Apple_10K_2025.pdf p15.0 (0.518)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.514)"
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2025?",
+      "company_filter": "Apple",
+      "expected": "112,010",
+      "answer": "Apple's net income in 2025 was $112,010 million. This information is from Apple Inc. | 2025 Form 10-K | Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p32.0 (0.69)",
+        "Apple | Apple_10K_2025.pdf p36.0 (0.631)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.617)",
+        "Apple | Apple_10K_2025.pdf p35.0 (0.591)",
+        "Apple | Apple_10K_2025.pdf p33.0 (0.583)"
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin percentage in 2025?",
+      "company_filter": "Apple",
+      "expected": "46.9",
+      "answer": "Apple's gross margin percentage in 2025 was 46.9% (Source 2: Apple_10K_2025.pdf, Page 27.0).",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p80.0 (0.571)",
+        "Apple | Apple_10K_2025.pdf p27.0 (0.563)",
+        "Apple | Apple_10K_2025.pdf p35.0 (0.559)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.552)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.523)"
+      ]
+    },
+    {
+      "question": "What were Apple's total operating expenses in 2025?",
+      "company_filter": "Apple",
+      "expected": "62,151",
+      "answer": "Apple's total operating expenses in 2025 were $62,151 million. This information is from Apple Inc. | 2025 Form 10-K | Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p32.0 (0.698)",
+        "Apple | Apple_10K_2025.pdf p24.0 (0.649)",
+        "Apple | Apple_10K_2025.pdf p15.0 (0.648)",
+        "Apple | Apple_10K_2025.pdf p36.0 (0.642)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.612)"
+      ]
+    },
+    {
+      "question": "What was Allstate's net income in 2025?",
+      "company_filter": "Allstate",
+      "expected": "10,266",
+      "answer": "Allstate's net income in 2025 was $10,266 million. This information is from Source 2: Allstate_10K_2025.pdf, Page 90.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Allstate | Allstate_10K_2025.pdf p98.0 (0.685)",
+        "Allstate | Allstate_10K_2025.pdf p90.0 (0.577)",
+        "Allstate | Allstate_10K_2025.pdf p132.0 (0.545)",
+        "Allstate | Allstate_10K_2025.pdf p70.0 (0.531)",
+        "Allstate | Allstate_10K_2025.pdf p92.0 (0.528)"
+      ]
+    },
+    {
+      "question": "What were Allstate's total revenues in 2025?",
+      "company_filter": "Allstate",
+      "expected": "67,685",
+      "answer": "Allstate's total revenues in 2025 were $61,449 million. This information is found in the Allstate 10-K filing, Page 185.0.",
+      "passed": false,
+      "sources_retrieved": [
+        "Allstate | Allstate_10K_2025.pdf p98.0 (0.726)",
+        "Allstate | Allstate_10K_2025.pdf p132.0 (0.611)",
+        "Allstate | Allstate_10K_2025.pdf p185.0 (0.516)",
+        "Allstate | Allstate_10K_2025.pdf p92.0 (0.515)",
+        "Allstate | Allstate_10K_2025.pdf p37.0 (0.512)"
+      ]
+    },
+    {
+      "question": "What was Progressive's net income in 2025?",
+      "company_filter": "Progressive",
+      "expected": "11,308",
+      "answer": "Progressive's net income in 2025 was $11,308 million. This information is from Source 2: Progressive_10K_2025.pdf, Page 149.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p153.0 (0.544)",
+        "Progressive | Progressive_10K_2025.pdf p149.0 (0.524)",
+        "Progressive | Progressive_10K_2025.pdf p97.0 (0.499)",
+        "Progressive | Progressive_10K_2025.pdf p75.0 (0.497)",
+        "Progressive | Progressive_10K_2025.pdf p41.0 (0.489)"
+      ]
+    },
+    {
+      "question": "What was the combined ratio for Progressive's total underwriting operations in 2025?",
+      "company_filter": "Progressive",
+      "expected": "87.1",
+      "answer": "The combined ratio for Progressive's total underwriting operations in 2025 was 87.1%. This information is found in Source 1: Progressive_10K_2025.pdf, Page 149.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p149.0 (0.552)",
+        "Progressive | Progressive_10K_2025.pdf p136.0 (0.537)",
+        "Progressive | Progressive_10K_2025.pdf p150.0 (0.535)",
+        "Progressive | Progressive_10K_2025.pdf p41.0 (0.533)",
+        "Progressive | Progressive_10K_2025.pdf p78.0 (0.526)"
+      ]
+    },
+    {
+      "question": "Which company had higher net income in 2025, Allstate or Progressive?",
+      "company_filter": null,
+      "expected": "Progressive",
+      "answer": "In 2025, Progressive had a net income of $11,308 million (Source 1: Progressive_10K_2025.pdf, Page 149.0), while Allstate had a net income of $10,266 million (Source 5: Allstate_10K_2025.pdf, Page 90.0). Therefore, Progressive had higher net income in 2025.",
+      "passed": true,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p149.0 (0.583)",
+        "Progressive | Progressive_10K_2025.pdf p153.0 (0.576)",
+        "Allstate | Allstate_10K_2025.pdf p65.0 (0.562)",
+        "Progressive | Progressive_10K_2025.pdf p151.0 (0.553)",
+        "Allstate | Allstate_10K_2025.pdf p90.0 (0.55)"
+      ]
+    }
+  ]
+}

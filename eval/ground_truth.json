@@ -2,26 +2,61 @@
     {
         "question": "What were Apple's total net sales in 2025?",
         "expected_answer": "416,161",
-        "notes": "Total net sales were $416,161 million for fiscal year 2025"
+        "notes": "Total net sales were $416,161 million for fiscal year 2025",
+        "company": "Apple"
     },
     {
         "question": "How much did Apple spend on research and development in 2025?",
         "expected_answer": "34,550",
-        "notes": "R&D expenses were $34,550 million"
+        "notes": "R&D expenses were $34,550 million",
+        "company": "Apple"
     },
     {
         "question": "What was Apple's net income in 2025?",
         "expected_answer": "112,010",
-        "notes": "Net income was $112,010 million"
+        "notes": "Net income was $112,010 million",
+        "company": "Apple"
     },
     {
         "question": "What was Apple's gross margin percentage in 2025?",
         "expected_answer": "46.9",
-        "notes": "Gross margin percentage was 46.9%"
+        "notes": "Gross margin percentage was 46.9%",
+        "company": "Apple"
     },
     {
         "question": "What were Apple's total operating expenses in 2025?",
         "expected_answer": "62,151",
-        "notes": "Total operating expenses were $62,151 million"
+        "notes": "Total operating expenses were $62,151 million",
+        "company": "Apple"
+    },
+    {
+        "question": "What was Allstate's net income in 2025?",
+        "expected_answer": "10,266",
+        "notes": "Net income was $10,266 million",
+        "company": "Allstate"
+    },
+    {
+        "question": "What were Allstate's total revenues in 2025?",
+        "expected_answer": "67,685",
+        "notes": "Total revenues were $67,685 million per Consolidated Statements of Operations",
+        "company": "Allstate"
+    },
+    {
+        "question": "What was Progressive's net income in 2025?",
+        "expected_answer": "11,308",
+        "notes": "Net income was $11,308 million",
+        "company": "Progressive"
+    },
+    {
+        "question": "What was the combined ratio for Progressive's total underwriting operations in 2025?",
+        "expected_answer": "87.1",
+        "notes": "Combined ratio was 87.1% for total underwriting operations",
+        "company": "Progressive"
+    },
+    {
+        "question": "Which company had higher net income in 2025, Allstate or Progressive?",
+        "expected_answer": "Progressive",
+        "notes": "Progressive net income $11,308M vs Allstate $10,266M",
+        "company": null
     }
 ]

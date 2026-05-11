@@ -2,10 +2,10 @@ import json
 import sys
 import os
 
-# This lets us import from src/ folder
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.retrieval.rag import ask
+
 
 def load_ground_truth(path):
     with open(path, 'r') as f:
@@ -17,16 +17,16 @@ def score_answer(answer, expected):
     Checks if the expected value appears in the answer.
     Strips formatting so $416,161 matches 416,161 matches 416161.
     """
-    # Normalize both strings — remove $, commas, spaces, lowercase everything
     def normalize(text):
         return text.lower().replace(',', '').replace('$', '').replace('%', '').strip()
-    
+
     return normalize(expected) in normalize(answer)
 
 
 def run_evaluation(ground_truth_path):
     """
     Runs every question through the RAG pipeline and scores the results.
+    Company filter is applied per question when specified in ground truth.
     """
     ground_truth = load_ground_truth(ground_truth_path)
 
@@ -38,10 +38,13 @@ def run_evaluation(ground_truth_path):
     correct = 0
 
     for i, item in enumerate(ground_truth):
+        company = item.get("company")   # None for cross-company questions
         print(f"\nQuestion {i+1}/{len(ground_truth)}: {item['question']}")
+        if company:
+            print(f"Company filter: {company}")
 
-        # Run through the pipeline
-        result = ask(item['question'])
+        # Run through the pipeline with company filter
+        result = ask(item['question'], company=company)
         answer = result['answer']
 
         # Score it
@@ -51,11 +54,12 @@ def run_evaluation(ground_truth_path):
 
         results.append({
             "question": item['question'],
+            "company_filter": company,
             "expected": item['expected_answer'],
             "answer": answer,
             "passed": passed,
             "sources_retrieved": [
-                f"{s['source']} p{s['page_number']} ({s['similarity_score']})"
+                f"{s['company']} | {s['source']} p{s['page_number']} ({s['similarity_score']})"
                 for s in result['sources']
             ]
         })
@@ -74,9 +78,9 @@ def run_evaluation(ground_truth_path):
     print("\nDetailed Results:")
     for r in results:
         status = "✓" if r['passed'] else "✗"
-        print(f"  {status} {r['question']}")
+        company_label = f"[{r['company_filter']}]" if r['company_filter'] else "[All]"
+        print(f"  {status} {company_label} {r['question']}")
 
-    # Save results to a file so we can compare later
     output = {
         "score": score,
         "correct": correct,

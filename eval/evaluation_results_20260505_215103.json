@@ -1,0 +1,147 @@
+{
+  "score": 80.0,
+  "correct": 8,
+  "total": 10,
+  "results": [
+    {
+      "question": "What were Apple's total net sales in 2025?",
+      "company_filter": "Apple",
+      "expected": "416,161",
+      "answer": "Apple's total net sales in 2025 were $416,161 million. (Source 2: Apple_10K_2025.pdf, Page 32.0)",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p26.0 (0.716)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.662)",
+        "Apple | Apple_10K_2025.pdf p39.0 (0.63)",
+        "Apple | Apple_10K_2025.pdf p24.0 (0.627)",
+        "Apple | Apple_10K_2025.pdf p51.0 (0.597)"
+      ]
+    },
+    {
+      "question": "How much did Apple spend on research and development in 2025?",
+      "company_filter": "Apple",
+      "expected": "34,550",
+      "answer": "Apple spent $34,550 million on research and development in 2025. This information is from Apple Inc. | 2025 Form 10-K | Page 29.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p24.0 (0.56)",
+        "Apple | Apple_10K_2025.pdf p6.0 (0.543)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.514)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.512)",
+        "Apple | Apple_10K_2025.pdf p80.0 (0.501)"
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2025?",
+      "company_filter": "Apple",
+      "expected": "112,010",
+      "answer": "Apple's net income in 2025 was $112,010 million. (Source 1: Apple_10K_2025.pdf, Page 32.0)",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p32.0 (0.69)",
+        "Apple | Apple_10K_2025.pdf p36.0 (0.631)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.617)",
+        "Apple | Apple_10K_2025.pdf p35.0 (0.591)",
+        "Apple | Apple_10K_2025.pdf p33.0 (0.583)"
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin percentage in 2025?",
+      "company_filter": "Apple",
+      "expected": "46.9",
+      "answer": "Apple's gross margin percentage in 2025 was 46.9% (Source 2: Apple_10K_2025.pdf, Page 27.0).",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p80.0 (0.571)",
+        "Apple | Apple_10K_2025.pdf p27.0 (0.563)",
+        "Apple | Apple_10K_2025.pdf p35.0 (0.559)",
+        "Apple | Apple_10K_2025.pdf p32.0 (0.552)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.523)"
+      ]
+    },
+    {
+      "question": "What were Apple's total operating expenses in 2025?",
+      "company_filter": "Apple",
+      "expected": "62,151",
+      "answer": "Apple's total operating expenses in 2025 were $62,151 million. This information is from Source 1: Apple_10K_2025.pdf, Page 32.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Apple | Apple_10K_2025.pdf p32.0 (0.698)",
+        "Apple | Apple_10K_2025.pdf p24.0 (0.649)",
+        "Apple | Apple_10K_2025.pdf p36.0 (0.642)",
+        "Apple | Apple_10K_2025.pdf p26.0 (0.612)",
+        "Apple | Apple_10K_2025.pdf p37.0 (0.605)"
+      ]
+    },
+    {
+      "question": "What was Allstate's net income in 2025?",
+      "company_filter": "Allstate",
+      "expected": "10,266",
+      "answer": "Allstate's net income in 2025 was $10,266 million. This information is found in Source 2: Allstate_10K_2025.pdf, Page 111.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Allstate | Allstate_10K_2025.pdf p197.0 (0.653)",
+        "Allstate | Allstate_10K_2025.pdf p111.0 (0.568)",
+        "Allstate | Allstate_10K_2025.pdf p231.0 (0.542)",
+        "Allstate | Allstate_10K_2025.pdf p14.0 (0.542)",
+        "Allstate | Allstate_10K_2025.pdf p221.0 (0.534)"
+      ]
+    },
+    {
+      "question": "What were Allstate's total revenues in 2025?",
+      "company_filter": "Allstate",
+      "expected": "64,136",
+      "answer": "I don't have enough information in the provided documents to answer that.",
+      "passed": false,
+      "sources_retrieved": [
+        "Allstate | Allstate_10K_2025.pdf p197.0 (0.625)",
+        "Allstate | Allstate_10K_2025.pdf p231.0 (0.587)",
+        "Allstate | Allstate_10K_2025.pdf p14.0 (0.583)",
+        "Allstate | Allstate_10K_2025.pdf p151.0 (0.574)",
+        "Allstate | Allstate_10K_2025.pdf p210.0 (0.571)"
+      ]
+    },
+    {
+      "question": "What was Progressive's net income in 2025?",
+      "company_filter": "Progressive",
+      "expected": "11,308",
+      "answer": "Progressive's net income in 2025 was $11,308 million. This information is from Source 2: Progressive_10K_2025.pdf, Page 149.0.",
+      "passed": true,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p153.0 (0.544)",
+        "Progressive | Progressive_10K_2025.pdf p149.0 (0.524)",
+        "Progressive | Progressive_10K_2025.pdf p97.0 (0.499)",
+        "Progressive | Progressive_10K_2025.pdf p75.0 (0.497)",
+        "Progressive | Progressive_10K_2025.pdf p41.0 (0.489)"
+      ]
+    },
+    {
+      "question": "What was Progressive's combined ratio in 2025?",
+      "company_filter": "Progressive",
+      "expected": "87.4",
+      "answer": "I don't have enough information in the provided documents to answer that.",
+      "passed": false,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p75.0 (0.497)",
+        "Progressive | Progressive_10K_2025.pdf p153.0 (0.463)",
+        "Progressive | Progressive_10K_2025.pdf p151.0 (0.462)",
+        "Progressive | Progressive_10K_2025.pdf p41.0 (0.45)",
+        "Progressive | Progressive_10K_2025.pdf p78.0 (0.446)"
+      ]
+    },
+    {
+      "question": "Which company had higher net income in 2025, Allstate or Progressive?",
+      "company_filter": null,
+      "expected": "Progressive",
+      "answer": "In 2025, Progressive had a net income of $11,308 million, while Allstate had a net income of $10,266 million. Therefore, Progressive had higher net income in 2025. \n\n(Source 1: Progressive_10K_2025.pdf, Page 149.0; Source 5: Allstate_10K_2025.pdf, Page 111.0)",
+      "passed": true,
+      "sources_retrieved": [
+        "Progressive | Progressive_10K_2025.pdf p149.0 (0.583)",
+        "Progressive | Progressive_10K_2025.pdf p153.0 (0.576)",
+        "Allstate | Allstate_10K_2025.pdf p83.0 (0.562)",
+        "Progressive | Progressive_10K_2025.pdf p151.0 (0.553)",
+        "Allstate | Allstate_10K_2025.pdf p111.0 (0.547)"
+      ]
+    }
+  ]
+}
