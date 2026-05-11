@@ -14,26 +14,27 @@ load_dotenv()
 app = FastAPI(
     title="Financial RAG Pipeline",
     description="Question answering system for SEC 10-K filings",
-    version="2.0.0"
+    version="3.0.0"
 )
 
 
 class QueryRequest(BaseModel):
     question: str
-    company: Optional[str] = None    # ← new, optional filter
+    company: Optional[str] = None
 
 
 class SourceModel(BaseModel):
     source: str
-    company: str                     # ← new
+    company: str
     page_number: float
     similarity_score: float
+    rerank_score: float              # ← new
 
 
 class QueryResponse(BaseModel):
     question: str
     answer: str
-    company_filter: Optional[str]    # ← new, echoes back what filter was used
+    company_filter: Optional[str]
     sources: list[SourceModel]
 
 
@@ -67,7 +68,8 @@ def query(request: QueryRequest):
                     source=s["source"],
                     company=s["company"],
                     page_number=s["page_number"],
-                    similarity_score=s["similarity_score"]
+                    similarity_score=s["similarity_score"],
+                    rerank_score=s["rerank_score"]          # ← new
                 )
                 for s in result["sources"]
             ]
